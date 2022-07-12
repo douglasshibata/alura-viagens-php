@@ -30,6 +30,9 @@ class Cliente
         if (!$this->cepValido($cep)) {
             throw new Exception("CEP no formato inválido");
         }
+        if (!$this->telefoneValido($telefone)) {
+            throw new Exception("Telefone no formato inválido");
+        }
         $this->nome = $nome;
         $this->cpf_cnpj = $cpf_cnpj;
         $this->telefone = $telefone;
@@ -50,5 +53,13 @@ class Cliente
         } else {
             return false;
         }
+    }
+    function telefoneValido($telefone)
+    {
+        if (strlen($telefone) == 15) {
+            $regex_telefone = "/\([0-9]{2}\)[0-9]{5}\-[0-9]{4}/";
+            return preg_match($regex_telefone, str_replace(" ", "", $telefone));
+        }
+        return false;
     }
 }
