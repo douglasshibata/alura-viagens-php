@@ -4,7 +4,11 @@ Aplicação desenvolvida na aula da alura - PHP Brasil: validação de dados no 
 
 ## Objetivo
 Aprender a utilizar as validações brasileiras
-
+* CEP
+* CPF
+* Telefone
+* E-mail
+* CNPJ
 
 
 ### Executar o projeto
